@@ -23,9 +23,6 @@
     background-repeat: no-repeat;
     background-size: cover;
 
-    // @media screen and(max-width: 1200px) {
-    //     height: 100vh;
-    // }
 
     &-row {
         @include flex(space-between, center);
@@ -45,11 +42,12 @@
 
             &-link {
                 font-weight: 400;
-                font-size: 11px;
+                font-size: 14px;
                 line-height: 155%;
                 letter-spacing: 1px;
                 text-transform: uppercase;
                 color: $link_color;
+                @extend %transition;
 
                 &:not(:last-child) {
                     margin-right: 40px;
@@ -67,11 +65,11 @@
     }
 
     &-main {
+        height: 100vh;
         width: 60%;
         margin: 0 auto;
+        @extend %center;
         text-align: center;
-        @include flex(unset, center);
-        margin-top: 200px;
 
         @media screen and(max-width: 560px) {
             width: 80%;
@@ -89,7 +87,7 @@
         }
 
         &-btn {
-            padding: 10px 26px;
+            padding: 10px 28px;
             border: 1px solid $btn-color;
             border-radius: 3px;
             background-color: transparent;
@@ -101,9 +99,12 @@
             color: $btn-color;
             margin-top: 30px;
 
-            @media screen and(max-width: 560px) {
-                padding: 5px 13px;
-                font-size: 8px;
+            &:hover {
+                background-color: rgb(0, 0, 0, 0.1);
+            }
+
+            &:active {
+                background-color: transparent;
             }
         }
     }
@@ -140,9 +141,9 @@
         &_img {
             width: 280px;
             @extend %transition;
-            border: 5px solid transparent;
             cursor: pointer;
-            
+            margin: 8px;
+
 
             img {
                 width: 100%;
@@ -150,7 +151,7 @@
             }
 
             &:hover {
-                width: 300px;
+                transform: scale(1.1);
             }
         }
     }
@@ -176,4 +177,16 @@
 
 .all {
     color: $white;
+}
+
+.gayratov {
+    width: 100%;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
+    background-color: $white;
+    color: $gray;
+
+    &-plus {
+        color: #000;
+    }
 }
